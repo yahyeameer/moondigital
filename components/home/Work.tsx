@@ -30,29 +30,29 @@ export function Work() {
     )
 
     return (
-        <section id="work" className="py-24 bg-background relative overflow-hidden">
+        <section id="work" className="py-20 md:py-24 bg-background relative overflow-hidden">
             {/* Background Ambience */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-900/10 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+            <div className="absolute top-0 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-indigo-900/10 blur-[100px] md:blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
-                    <div className="max-w-xl">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-8">
+                    <div className="max-w-xl text-center md:text-left">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50">
                             Selected Work
                         </h2>
-                        <p className="text-muted-foreground text-lg">
+                        <p className="text-muted-foreground text-base sm:text-lg">
                             Explore our portfolio of high-impact digital solutions.
                         </p>
                     </div>
 
                     {/* Filter Bar - Glass Effect */}
-                    <div className="flex flex-wrap gap-2 p-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 p-1.5 rounded-3xl sm:rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
                         {filters.map((filter) => (
                             <button
                                 key={filter}
                                 onClick={() => setActiveFilter(filter)}
                                 className={cn(
-                                    "px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                                    "px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300",
                                     activeFilter === filter
                                         ? "bg-white text-black shadow-lg shadow-white/10"
                                         : "text-muted-foreground hover:text-white hover:bg-white/5"

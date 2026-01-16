@@ -31,7 +31,7 @@ export function DashboardMockup() {
                     </div>
                 </div>
 
-                <div className="absolute inset-0 pt-12 p-6 grid grid-cols-12 grid-rows-6 gap-4 md:gap-6 bg-grid-white/[0.02]">
+                <div className="absolute inset-0 pt-12 p-3 sm:p-6 grid grid-cols-12 grid-rows-6 gap-2 sm:gap-4 md:gap-6 bg-grid-white/[0.02] overflow-y-auto md:overflow-hidden">
 
                     {/* Sidebar / Nav */}
                     <motion.div
@@ -64,22 +64,22 @@ export function DashboardMockup() {
                     {/* Main Stat Card - System Status */}
                     <motion.div
                         whileHover={{ scale: 1.02 }}
-                        className="col-span-12 md:col-span-6 row-span-4 rounded-3xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-8 flex flex-col justify-between relative overflow-hidden group"
+                        className="col-span-12 md:col-span-6 row-span-3 sm:row-span-4 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-4 sm:p-8 flex flex-col justify-between relative overflow-hidden group"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         <div className="flex justify-between items-start relative z-10">
                             <div>
-                                <h3 className="text-zinc-400 text-sm font-medium tracking-wide uppercase mb-1">System Health</h3>
+                                <h3 className="text-zinc-400 text-[10px] sm:text-sm font-medium tracking-wide uppercase mb-1">System Health</h3>
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-4xl md:text-5xl font-bold text-white tracking-tight">99.9%</span>
-                                    <span className="text-emerald-400 text-sm font-medium">+0.4%</span>
+                                    <span className="text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">99.9%</span>
+                                    <span className="text-emerald-400 text-xs sm:text-sm font-medium">+0.4%</span>
                                 </div>
                             </div>
-                            <Activity className="w-6 h-6 text-white/20" />
+                            <Activity className="w-4 h-4 sm:w-6 sm:h-6 text-white/20" />
                         </div>
 
-                        <div className="relative h-32 w-full z-10">
+                        <div className="relative h-16 sm:h-32 w-full z-10">
                             {/* Simulated Graph */}
                             <svg className="w-full h-full overflow-visible" preserveAspectRatio="none">
                                 <motion.path
@@ -104,53 +104,53 @@ export function DashboardMockup() {
                     {/* Secondary Stat - Users */}
                     <motion.div
                         whileHover={{ scale: 1.02 }}
-                        className="col-span-6 md:col-span-4 row-span-2 rounded-2xl bg-white/5 border border-white/10 p-6 flex flex-col justify-center relative overflow-hidden"
+                        className="col-span-6 md:col-span-4 row-span-1 sm:row-span-2 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 p-3 sm:p-6 flex flex-col justify-center relative overflow-hidden"
                     >
-                        <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/20 blur-[50px] rounded-full pointer-events-none"></div>
-                        <div className="flex items-center gap-4 mb-4">
-                            <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 border border-blue-500/30">
-                                <Globe className="w-5 h-5" />
+                        <div className="absolute top-0 right-0 w-12 sm:w-24 h-12 sm:h-24 bg-blue-500/20 blur-[20px] sm:blur-[50px] rounded-full pointer-events-none"></div>
+                        <div className="flex items-center gap-2 sm:gap-4 mb-1 sm:mb-4">
+                            <div className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 border border-blue-500/30">
+                                <Globe className="w-3 h-3 sm:w-5 sm:h-5" />
                             </div>
-                            <span className="text-zinc-400 text-sm">Active Agents</span>
+                            <span className="text-zinc-400 text-[10px] sm:text-sm">Agents</span>
                         </div>
-                        <div className="text-3xl font-bold text-white">2,405</div>
+                        <div className="text-lg sm:text-3xl font-bold text-white">2,405</div>
                     </motion.div>
 
                     {/* Secondary Stat - CPU */}
                     <motion.div
                         whileHover={{ scale: 1.02 }}
-                        className="col-span-6 md:col-span-4 row-span-2 rounded-2xl bg-white/5 border border-white/10 p-6 flex flex-col justify-center relative overflow-hidden"
+                        className="col-span-6 md:col-span-4 row-span-1 sm:row-span-2 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 p-3 sm:p-6 flex flex-col justify-center relative overflow-hidden"
                     >
-                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-pink-500/20 blur-[50px] rounded-full pointer-events-none"></div>
-                        <div className="flex items-center gap-4 mb-4">
-                            <div className="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center text-pink-400 border border-pink-500/30">
-                                <Cpu className="w-5 h-5" />
+                        <div className="absolute bottom-0 left-0 w-12 sm:w-24 h-12 sm:h-24 bg-pink-500/20 blur-[20px] sm:blur-[50px] rounded-full pointer-events-none"></div>
+                        <div className="flex items-center gap-2 sm:gap-4 mb-1 sm:mb-4">
+                            <div className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-pink-500/20 flex items-center justify-center text-pink-400 border border-pink-500/30">
+                                <Cpu className="w-3 h-3 sm:w-5 sm:h-5" />
                             </div>
-                            <span className="text-zinc-400 text-sm">Processing Power</span>
+                            <span className="text-zinc-400 text-[10px] sm:text-sm">Power</span>
                         </div>
-                        <div className="text-3xl font-bold text-white">84 TB</div>
+                        <div className="text-lg sm:text-3xl font-bold text-white">84 TB</div>
                     </motion.div>
 
                     {/* Bottom Wide Card - Analytics */}
-                    <div className="col-span-12 md:col-span-10 row-span-2 rounded-2xl bg-[#0F0F0F] border border-white/5 p-4 flex items-center justify-between gap-8 relative overflow-hidden">
+                    <div className="col-span-12 md:col-span-10 row-span-2 rounded-xl sm:rounded-2xl bg-[#0F0F0F] border border-white/5 p-3 sm:p-4 flex items-center justify-between gap-4 sm:gap-8 relative overflow-hidden">
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
-                        <div className="flex items-center gap-6 z-10 pl-4">
-                            <div className="p-3 rounded-lg bg-green-500/10 border border-green-500/20">
-                                <BarChart3 className="w-6 h-6 text-green-400" />
+                        <div className="flex items-center gap-3 sm:gap-6 z-10 pl-1 sm:pl-4">
+                            <div className="p-2 sm:p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+                                <BarChart3 className="w-4 h-4 sm:w-6 sm:h-6 text-green-400" />
                             </div>
                             <div>
-                                <div className="text-white font-medium mb-1">Real-time Analytics</div>
-                                <div className="text-zinc-500 text-xs">Getting data from 12 sources</div>
+                                <div className="text-white text-xs sm:text-base font-medium mb-0.5 sm:mb-1">Analytics</div>
+                                <div className="text-zinc-500 text-[8px] sm:text-xs">Real-time data flow</div>
                             </div>
                         </div>
-                        <div className="flex gap-1 items-end h-12 z-10 pr-4">
+                        <div className="flex gap-0.5 sm:gap-1 items-end h-8 sm:h-12 z-10 pr-1 sm:pr-4">
                             {[40, 70, 45, 90, 60, 80, 50, 95].map((h, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ height: 0 }}
                                     animate={{ height: `${h}%` }}
                                     transition={{ duration: 0.5, delay: 1 + i * 0.1 }}
-                                    className="w-2 bg-gradient-to-t from-white/10 to-white/60 rounded-t-sm"
+                                    className="w-1 sm:w-2 bg-gradient-to-t from-white/10 to-white/60 rounded-t-[1px] sm:rounded-t-sm"
                                 />
                             ))}
                         </div>

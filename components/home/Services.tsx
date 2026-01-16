@@ -41,7 +41,7 @@ import { ShaderAnimation } from "@/components/ui/shader-lines"
 
 export function Services() {
     return (
-        <section id="services" className="py-24 md:py-32 relative overflow-hidden bg-black">
+        <section id="services" className="py-20 md:py-32 relative overflow-hidden bg-black">
             {/* Background Animation */}
             <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
                 <ShaderAnimation />
@@ -50,16 +50,16 @@ export function Services() {
             <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10"></div>
 
             {/* Background Elements - More Dynamic */}
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-blue-900/10 blur-[100px] rounded-full pointer-events-none mix-blend-screen" />
-            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen" />
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-900/10 blur-[80px] md:blur-[100px] rounded-full pointer-events-none mix-blend-screen" />
+            <div className="absolute bottom-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-purple-900/10 blur-[100px] md:blur-[120px] rounded-full pointer-events-none mix-blend-screen" />
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="text-center max-w-2xl mx-auto mb-16">
+                <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40"
+                        className="text-3xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40"
                     >
                         Core Services
                     </motion.h2>
@@ -68,7 +68,7 @@ export function Services() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-muted-foreground text-lg"
+                        className="text-muted-foreground text-base sm:text-lg"
                     >
                         Scalable, high-performance solutions tailored to your business needs.
                     </motion.p>

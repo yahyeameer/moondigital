@@ -13,7 +13,7 @@ import VaporizeTextCycle from "@/components/ui/vapour-text-effect"
 
 export function Hero() {
     return (
-        <section className="relative min-h-[100vh] overflow-hidden bg-black selection:bg-purple-500/30">
+        <section className="relative min-h-[100dvh] transition-[min-height] duration-300 overflow-hidden bg-black selection:bg-purple-500/30 flex items-center justify-center">
 
             {/* Background Paths Integration */}
             <div className="absolute inset-0 z-0">
@@ -21,35 +21,56 @@ export function Hero() {
             </div>
 
             {/* Overlay Content */}
-            <div className="container mx-auto px-4 relative z-10 text-center pt-32 pointer-events-none">
-                <div className="pointer-events-auto mt-[15vh]">
+            <div className="container mx-auto px-4 relative z-10 text-center py-20 pointer-events-none w-full">
+                <div className="pointer-events-auto flex flex-col items-center justify-center w-full">
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="mb-8 flex flex-col items-center justify-center min-h-[160px]"
+                        className="mb-8 flex flex-col items-center justify-center min-h-[120px] md:min-h-[160px] w-full"
                     >
-                        <div className="w-full h-[120px] md:h-[160px] relative">
-                            <VaporizeTextCycle
-                                texts={["Build Your Digital Future", "With AARTECH"]}
-                                font={{
-                                    fontFamily: "Outfit, sans-serif",
-                                    fontSize: "60px",
-                                    fontWeight: 700,
-                                }}
-                                color="rgba(255, 255, 255, 0.9)"
-                                spread={3}
-                                density={4}
-                                animation={{
-                                    vaporizeDuration: 1.5,
-                                    fadeInDuration: 0.8,
-                                    waitDuration: 2.0
-                                }}
-                                alignment="center"
-                            />
+                        <div className="w-full h-[100px] sm:h-[120px] md:h-[160px] relative flex items-center justify-center">
+                            <div className="hidden md:block w-full h-full">
+                                <VaporizeTextCycle
+                                    texts={["Build Your Digital Future", "With AARTECH"]}
+                                    font={{
+                                        fontFamily: "Outfit, sans-serif",
+                                        fontSize: "60px",
+                                        fontWeight: 700,
+                                    }}
+                                    color="rgba(255, 255, 255, 0.9)"
+                                    spread={3}
+                                    density={4}
+                                    animation={{
+                                        vaporizeDuration: 1.5,
+                                        fadeInDuration: 0.8,
+                                        waitDuration: 2.0
+                                    }}
+                                    alignment="center"
+                                />
+                            </div>
+                            <div className="md:hidden w-full h-full">
+                                <VaporizeTextCycle
+                                    texts={["Build Your Digital Future", "With AARTECH"]}
+                                    font={{
+                                        fontFamily: "Outfit, sans-serif",
+                                        fontSize: "32px",
+                                        fontWeight: 700,
+                                    }}
+                                    color="rgba(255, 255, 255, 0.9)"
+                                    spread={2}
+                                    density={5}
+                                    animation={{
+                                        vaporizeDuration: 1.5,
+                                        fadeInDuration: 0.8,
+                                        waitDuration: 2.0
+                                    }}
+                                    alignment="center"
+                                />
+                            </div>
                         </div>
-                        <p className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed drop-shadow-md bg-black/30 backdrop-blur-sm rounded-full py-2 px-6 border border-white/5 mt-4">
+                        <p className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed drop-shadow-md bg-black/30 backdrop-blur-sm rounded-2xl md:rounded-full py-3 px-6 border border-white/5 mt-6 px-4">
                             Premium software solutions, high-end mobile apps, and intelligent AI agents.
                             <span className="block mt-1 text-white/80">Turn your vision into reality today.</span>
                         </p>
@@ -59,14 +80,14 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4"
                     >
-                        <LiquidButton size="xl" asChild className="text-white hover:text-white">
+                        <LiquidButton size="xl" asChild className="text-white hover:text-white w-full sm:w-auto">
                             <Link href="https://wa.me/252636444494" target="_blank" rel="noopener noreferrer">
                                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>
                         </LiquidButton>
-                        <Button size="lg" variant="outline" asChild className="rounded-full text-base h-14 px-8 bg-transparent border-white/10 hover:bg-white/5 text-white hover:border-white/20">
+                        <Button size="lg" variant="outline" asChild className="rounded-full text-base h-14 px-8 bg-transparent border-white/10 hover:bg-white/5 text-white hover:border-white/20 w-full sm:w-auto">
                             <Link href="#work">
                                 <Play className="mr-2 h-4 w-4 fill-white" /> View Work
                             </Link>
