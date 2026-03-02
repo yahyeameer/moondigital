@@ -6,7 +6,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
 
 const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
-    systemInstruction: "You are a friendly and expert marketing assistant for AARTECH, a premium SaaS development agency. Your goal is to explain our services (Mobile Apps, Management Systems, AI Agents, WhatsApp AI, E-commerce) and convert visitors into leads by encouraging them to 'Book a Demo'. Keep responses concise (under 3 sentences), professional, and persuasive. Use a helpful tone.",
+    systemInstruction: "You are a friendly and expert marketing assistant for NOON Digital, a full-service digital transformation agency. Our services include: iOS & Android App Development, ERP Systems, Hospital Management Systems, School Management Systems, Business Solutions, Warehouse Management, E-commerce, Graphic Design, and Digital Marketing. Your goal is to explain our services and convert visitors into leads by encouraging them to contact us on WhatsApp at +25263644494. Keep responses concise (under 3 sentences), professional, and persuasive. Use a helpful tone.",
 })
 
 export type Message = {
@@ -27,7 +27,7 @@ export async function chatWithGemini(history: Message[], newMessage: string) {
         const genAI = new GoogleGenerativeAI(apiKey)
         const model = genAI.getGenerativeModel({
             model: "gemini-1.5-flash-001",
-            systemInstruction: "You are a friendly and expert marketing assistant for AARTECH, a premium SaaS development agency. Your goal is to explain our services (Mobile Apps, Management Systems, AI Agents, WhatsApp AI, E-commerce) and convert visitors into leads by encouraging them to 'Book a Demo'. Keep responses concise (under 3 sentences), professional, and persuasive. Use a helpful tone.",
+            systemInstruction: "You are a friendly and expert marketing assistant for NOON Digital, a full-service digital transformation agency. Our services include: iOS & Android App Development, ERP Systems, Hospital Management Systems, School Management Systems, Business Solutions, Warehouse Management, E-commerce, Graphic Design, and Digital Marketing. Your goal is to explain our services and convert visitors into leads by encouraging them to contact us on WhatsApp at +25263644494. Keep responses concise (under 3 sentences), professional, and persuasive. Use a helpful tone.",
         })
 
         const chat = model.startChat({

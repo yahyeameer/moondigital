@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 export function AIChatBubble() {
     const [isOpen, setIsOpen] = useState(false)
     const [messages, setMessages] = useState<Message[]>([
-        { role: "model", content: "Hello! I'm your AARTECH AI assistant. How can I help you scale your business today?" }
+        { role: "model", content: "Hello! I'm your NOON Digital assistant. How can I help you digitalize your business today?" }
     ])
     const [inputValue, setInputValue] = useState("")
     const [isLoading, setIsLoading] = useState(false)
@@ -68,10 +68,10 @@ export function AIChatBubble() {
                         <div className="p-4 border-b border-white/10 bg-white/5 flex items-center justify-between">
                             <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
-                                    <Image src="/icon.png" alt="AARTECH" width={32} height={32} className="w-full h-full object-cover" />
+                                    <Image src="/icon.png" alt="NOON Digital" width={32} height={32} className="w-full h-full object-cover" />
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-white text-sm">AARTECH AI</h4>
+                                    <h4 className="font-semibold text-white text-sm">NOON Digital</h4>
                                     <p className="text-xs text-green-400 flex items-center gap-1">
                                         <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
                                         Online

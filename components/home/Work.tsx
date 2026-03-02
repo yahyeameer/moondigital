@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { useQuery } from "convex/react"
 import { api } from "@/convex/_generated/api"
 
-const filters = ["All", "AI Agents", "Management Systems", "Mobile Apps", "E-commerce"]
+const filters = ["All", "Mobile Apps", "Management Systems", "E-commerce", "Design & Marketing"]
 
 export function Work() {
     const [activeFilter, setActiveFilter] = useState("All")
@@ -30,43 +30,46 @@ export function Work() {
     )
 
     return (
-        <section id="work" className="py-20 md:py-24 bg-background relative overflow-hidden">
+        <section id="work" className="py-20 md:py-28 bg-[#050508] relative overflow-hidden">
             {/* Background Ambience */}
-            <div className="absolute top-0 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-indigo-900/10 blur-[100px] md:blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+            <div className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-900/8 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-purple-900/8 blur-[80px] md:blur-[100px] rounded-full pointer-events-none" />
 
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-8">
-                    <div className="max-w-xl text-center md:text-left">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                <div className="flex flex-col gap-6 mb-12 sm:mb-16">
+                    <div className="text-center sm:text-left max-w-xl">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50">
                             Selected Work
                         </h2>
-                        <p className="text-muted-foreground text-base sm:text-lg">
+                        <p className="text-white/50 text-base sm:text-lg">
                             Explore our portfolio of high-impact digital solutions.
                         </p>
                     </div>
 
-                    {/* Filter Bar - Glass Effect */}
-                    <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 p-1.5 rounded-3xl sm:rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-                        {filters.map((filter) => (
-                            <button
-                                key={filter}
-                                onClick={() => setActiveFilter(filter)}
-                                className={cn(
-                                    "px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300",
-                                    activeFilter === filter
-                                        ? "bg-white text-black shadow-lg shadow-white/10"
-                                        : "text-muted-foreground hover:text-white hover:bg-white/5"
-                                )}
-                            >
-                                {filter}
-                            </button>
-                        ))}
+                    {/* Filter Bar - horizontally scrollable on mobile */}
+                    <div className="w-full overflow-x-auto pb-1 -mx-1 px-1">
+                        <div className="flex items-center gap-2 p-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm w-max min-w-full sm:w-auto sm:min-w-0">
+                            {filters.map((filter) => (
+                                <button
+                                    key={filter}
+                                    onClick={() => setActiveFilter(filter)}
+                                    className={cn(
+                                        "px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0",
+                                        activeFilter === filter
+                                            ? "bg-white text-black shadow-lg shadow-white/10"
+                                            : "text-white/50 hover:text-white hover:bg-white/5"
+                                    )}
+                                >
+                                    {filter}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
                 <motion.div
                     layout
-                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
                 >
                     <AnimatePresence mode="popLayout">
                         {filteredProjects.map((project) => (

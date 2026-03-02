@@ -1,105 +1,113 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { ArrowRight, Play, CheckCircle2 } from "lucide-react"
+import { motion } from "framer-motion"
+import { ArrowRight, Play, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
-// import { BackgroundPaths } from "@/components/ui/background-paths"
-import { ShaderAnimation } from "@/components/ui/shader-lines"
+import { AuroraBackground } from "@/components/ui/AuroraBackground"
 import { DashboardMockup } from "@/components/home/DashboardMockup"
-import { LiquidButton } from "@/components/ui/liquid-glass-button"
 import Link from "next/link"
-import VaporizeTextCycle from "@/components/ui/vapour-text-effect"
 
 export function Hero() {
     return (
-        <section className="relative min-h-[100dvh] transition-[min-height] duration-300 overflow-hidden bg-black selection:bg-purple-500/30 flex items-center justify-center">
+        <section className="relative min-h-[100dvh] overflow-hidden bg-[#050508] flex items-center justify-center">
 
-            {/* Background Paths Integration */}
-            <div className="absolute inset-0 z-0">
-                <ShaderAnimation />
-            </div>
+            {/* Smooth Aurora Background */}
+            <AuroraBackground />
 
-            {/* Overlay Content */}
-            <div className="container mx-auto px-4 relative z-10 text-center py-20 pointer-events-none w-full">
-                <div className="pointer-events-auto flex flex-col items-center justify-center w-full">
+            {/* Subtle grid lines */}
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    backgroundImage:
+                        "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
+                    backgroundSize: "60px 60px",
+                }}
+            />
 
+            {/* Fade grid at edges */}
+            <div className="absolute inset-0 pointer-events-none" style={{
+                background: "radial-gradient(ellipse 90% 80% at 50% 50%, transparent 40%, #050508 100%)"
+            }} />
+
+            {/* Main Content */}
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center py-24 sm:py-28 w-full max-w-5xl">
+                <div className="flex flex-col items-center justify-center w-full gap-8">
+
+                    {/* Badge */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm text-white/60"
+                    >
+                        <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
+                        Full-Service Digital Agency
+                    </motion.div>
+
+                    {/* Headline */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="mb-8 flex flex-col items-center justify-center min-h-[120px] md:min-h-[160px] w-full"
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="w-full"
                     >
-                        <div className="w-full h-[100px] sm:h-[120px] md:h-[160px] relative flex items-center justify-center">
-                            <div className="hidden md:block w-full h-full">
-                                <VaporizeTextCycle
-                                    texts={["Build Your Digital Future", "With AARTECH"]}
-                                    font={{
-                                        fontFamily: "Outfit, sans-serif",
-                                        fontSize: "60px",
-                                        fontWeight: 700,
-                                    }}
-                                    color="rgba(255, 255, 255, 0.9)"
-                                    spread={3}
-                                    density={4}
-                                    animation={{
-                                        vaporizeDuration: 1.5,
-                                        fadeInDuration: 0.8,
-                                        waitDuration: 2.0
-                                    }}
-                                    alignment="center"
-                                />
-                            </div>
-                            <div className="md:hidden w-full h-full">
-                                <VaporizeTextCycle
-                                    texts={["Build Your Digital Future", "With AARTECH"]}
-                                    font={{
-                                        fontFamily: "Outfit, sans-serif",
-                                        fontSize: "32px",
-                                        fontWeight: 700,
-                                    }}
-                                    color="rgba(255, 255, 255, 0.9)"
-                                    spread={2}
-                                    density={5}
-                                    animation={{
-                                        vaporizeDuration: 1.5,
-                                        fadeInDuration: 0.8,
-                                        waitDuration: 2.0
-                                    }}
-                                    alignment="center"
-                                />
-                            </div>
-                        </div>
-                        <p className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed drop-shadow-md bg-black/30 backdrop-blur-sm rounded-2xl md:rounded-full py-3 px-6 border border-white/5 mt-6 px-4">
-                            Premium software solutions, high-end mobile apps, and intelligent AI agents.
-                            <span className="block mt-1 text-white/80">Turn your vision into reality today.</span>
-                        </p>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-white">
+                            Digitalize{" "}
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400">
+                                Everything
+                            </span>
+                            <br />
+                            <span className="text-white/80">With NOON Digital</span>
+                        </h1>
                     </motion.div>
 
+                    {/* Tagline */}
+                    <motion.p
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-base sm:text-lg text-white/50 max-w-xl mx-auto leading-relaxed px-2"
+                    >
+                        Apps · ERP · Hospital &amp; School Systems · E-commerce · Design · Marketing
+                        <span className="block mt-1.5 text-white/70 font-medium">
+                            Everything your business needs, digitalized.
+                        </span>
+                    </motion.p>
+
+                    {/* CTA Buttons */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full px-2"
                     >
-                        <LiquidButton size="xl" asChild className="text-white hover:text-white w-full sm:w-auto">
-                            <Link href="https://wa.me/252636444494" target="_blank" rel="noopener noreferrer">
-                                Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                            </Link>
-                        </LiquidButton>
-                        <Button size="lg" variant="outline" asChild className="rounded-full text-base h-14 px-8 bg-transparent border-white/10 hover:bg-white/5 text-white hover:border-white/20 w-full sm:w-auto">
-                            <Link href="#work">
-                                <Play className="mr-2 h-4 w-4 fill-white" /> View Work
-                            </Link>
-                        </Button>
+                        <Link
+                            href="https://wa.me/25263644494"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto h-14 px-8 rounded-full bg-white text-black text-base font-semibold hover:bg-white/90 active:scale-95 transition-all duration-200 shadow-lg shadow-white/10"
+                        >
+                            <MessageCircle className="h-4 w-4 flex-shrink-0" />
+                            Chat on WhatsApp
+                            <ArrowRight className="h-4 w-4 flex-shrink-0" />
+                        </Link>
+
+                        <Link
+                            href="#work"
+                            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto h-14 px-8 rounded-full bg-transparent border border-white/15 text-white text-base font-medium hover:bg-white/5 hover:border-white/25 active:scale-95 transition-all duration-200"
+                        >
+                            <Play className="h-4 w-4 fill-white flex-shrink-0" />
+                            View Our Work
+                        </Link>
                     </motion.div>
 
-                    {/* Abstract Dashboard Mockup */}
+                    {/* Dashboard Mockup */}
                     <motion.div
-                        initial={{ opacity: 0, y: 100, rotateX: 20 }}
-                        animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                        transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                        className="perspective-[2000px] w-full"
+                        initial={{ opacity: 0, y: 60 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        className="w-full mt-4"
+                        style={{ perspective: "2000px" }}
                     >
                         <DashboardMockup />
                     </motion.div>

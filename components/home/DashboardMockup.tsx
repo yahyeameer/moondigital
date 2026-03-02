@@ -27,7 +27,7 @@ export function DashboardMockup() {
                     </div>
                     <div className="flex items-center gap-2 text-xs text-white/20 font-medium tracking-widest uppercase">
                         <Wifi className="w-3 h-3" />
-                        AARTECH GRID v2.0
+                        NOON DIGITAL v2.0
                     </div>
                 </div>
 

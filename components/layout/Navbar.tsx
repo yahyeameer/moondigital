@@ -18,8 +18,10 @@ const navLinks = [
 export function Navbar() {
     const [scrolled, setScrolled] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
+        setMounted(true)
         const handleScroll = () => setScrolled(window.scrollY > 20)
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
@@ -35,10 +37,10 @@ export function Navbar() {
             <div className="container mx-auto px-4 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-lg overflow-hidden">
-                        <Image src="/icon.png" alt="AARTECH" width={32} height={32} className="w-full h-full object-cover" />
+                        <Image src="/icon.png" alt="NOON Digital" width={32} height={32} className="w-full h-full object-cover" />
                     </div>
                     <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-                        AARTECH
+                        NOON <span className="text-sm font-medium tracking-[0.25em] text-white/50">DIGITAL</span>
                     </span>
                 </Link>
 
@@ -57,29 +59,31 @@ export function Navbar() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <SignedOut>
-                            <SignInButton mode="modal">
-                                <Button variant="ghost" className="text-white hover:text-white hover:bg-white/10">
-                                    Sign In
-                                </Button>
-                            </SignInButton>
-                            <SignUpButton mode="modal">
-                                <Button asChild className="bg-white text-black hover:bg-white/90">
-                                    <Link href="https://wa.me/252636444494" target="_blank">
-                                        Get Started
-                                    </Link>
-                                </Button>
-                            </SignUpButton>
-                        </SignedOut>
-                        <SignedIn>
-                            <UserButton
-                                appearance={{
-                                    elements: {
-                                        avatarBox: "w-9 h-9 border border-white/20"
-                                    }
-                                }}
-                            />
-                        </SignedIn>
+                        {mounted && (
+                            <>
+                                <SignedOut>
+                                    <SignInButton mode="modal">
+                                        <Button variant="ghost" className="text-white hover:text-white hover:bg-white/10">
+                                            Sign In
+                                        </Button>
+                                    </SignInButton>
+                                    <Button asChild className="bg-white text-black hover:bg-white/90">
+                                        <Link href="https://wa.me/25263644494" target="_blank" rel="noopener noreferrer">
+                                            Get Started
+                                        </Link>
+                                    </Button>
+                                </SignedOut>
+                                <SignedIn>
+                                    <UserButton
+                                        appearance={{
+                                            elements: {
+                                                avatarBox: "w-9 h-9 border border-white/20"
+                                            }
+                                        }}
+                                    />
+                                </SignedIn>
+                            </>
+                        )}
                     </div>
                 </div>
 
@@ -102,10 +106,10 @@ export function Navbar() {
                         <div className="flex justify-between items-center mb-12">
                             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
                                 <div className="w-8 h-8 rounded-lg overflow-hidden">
-                                    <Image src="/icon.png" alt="AARTECH" width={32} height={32} className="w-full h-full object-cover" />
+                                    <Image src="/icon.png" alt="NOON Digital" width={32} height={32} className="w-full h-full object-cover" />
                                 </div>
                                 <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-                                    AARTECH
+                                    NOON <span className="text-sm font-medium tracking-[0.25em] text-white/50">DIGITAL</span>
                                 </span>
                             </Link>
                             <button className="text-white p-2" onClick={() => setMobileMenuOpen(false)}>
@@ -133,47 +137,49 @@ export function Navbar() {
                         </nav>
 
                         <div className="mt-auto flex flex-col gap-4">
-                            <SignedOut>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.4 }}
-                                >
-                                    <SignUpButton mode="modal">
-                                        <Button asChild className="w-full h-14 text-lg bg-white text-black hover:bg-white/90 rounded-2xl" onClick={() => setMobileMenuOpen(false)}>
-                                            <Link href="https://wa.me/252636444494" target="_blank">
-                                                Get Started
-                                            </Link>
-                                        </Button>
-                                    </SignUpButton>
-                                </motion.div>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.5 }}
-                                >
-                                    <SignInButton mode="modal">
-                                        <Button variant="outline" className="w-full h-14 text-lg border-white/10 text-white rounded-2xl" onClick={() => setMobileMenuOpen(false)}>
-                                            Sign In
-                                        </Button>
-                                    </SignInButton>
-                                </motion.div>
-                            </SignedOut>
-                            <SignedIn>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.4 }}
-                                    className="flex items-center gap-4 p-4 rounded-3xl bg-white/5 border border-white/10"
-                                >
-                                    <UserButton showName appearance={{
-                                        elements: {
-                                            userButtonBox: "flex-row-reverse gap-4",
-                                            userButtonOuterIdentifier: "text-white text-lg font-medium"
-                                        }
-                                    }} />
-                                </motion.div>
-                            </SignedIn>
+                            {mounted && (
+                                <>
+                                    <SignedOut>
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 0.4 }}
+                                        >
+                                            <Button asChild className="w-full h-14 text-lg bg-white text-black hover:bg-white/90 rounded-2xl" onClick={() => setMobileMenuOpen(false)}>
+                                                <Link href="https://wa.me/25263644494" target="_blank" rel="noopener noreferrer">
+                                                    Get Started
+                                                </Link>
+                                            </Button>
+                                        </motion.div>
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 0.5 }}
+                                        >
+                                            <SignInButton mode="modal">
+                                                <Button variant="outline" className="w-full h-14 text-lg border-white/10 text-white rounded-2xl" onClick={() => setMobileMenuOpen(false)}>
+                                                    Sign In
+                                                </Button>
+                                            </SignInButton>
+                                        </motion.div>
+                                    </SignedOut>
+                                    <SignedIn>
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 0.4 }}
+                                            className="flex items-center gap-4 p-4 rounded-3xl bg-white/5 border border-white/10"
+                                        >
+                                            <UserButton showName appearance={{
+                                                elements: {
+                                                    userButtonBox: "flex-row-reverse gap-4",
+                                                    userButtonOuterIdentifier: "text-white text-lg font-medium"
+                                                }
+                                            }} />
+                                        </motion.div>
+                                    </SignedIn>
+                                </>
+                            )}
                         </div>
                     </motion.div>
                 )}
