@@ -47,7 +47,7 @@ export function Contact() {
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-emerald-900/10 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                <div className="max-w-4xl mx-auto rounded-[2.5rem] bg-white/[0.02] border border-white/[0.05] p-6 sm:p-10 md:p-14 relative overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] backdrop-blur-xl">
+                <div className="max-w-4xl mx-auto rounded-3xl md:rounded-[2.5rem] bg-white/[0.02] border border-white/[0.05] p-6 sm:p-10 md:p-14 relative overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] backdrop-blur-xl">
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 relative z-10">
@@ -90,21 +90,21 @@ export function Contact() {
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <label htmlFor="name" className="text-sm font-semibold text-white/60 uppercase tracking-widest">Name</label>
-                                    <input required type="text" id="name" name="name" className="w-full h-14 rounded-2xl bg-white/[0.03] border border-white/[0.05] px-5 text-white focus:outline-none focus:bg-white/[0.06] focus:border-white/20 transition-all duration-300 placeholder:text-white/20" placeholder="Your name" />
+                                    <label htmlFor="name" className="text-xs sm:text-sm font-semibold text-white/60 uppercase tracking-widest">Name</label>
+                                    <input required type="text" id="name" name="name" className="w-full h-12 sm:h-14 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.05] px-4 sm:px-5 text-white focus:outline-none focus:bg-white/[0.06] focus:border-white/20 transition-all duration-300 placeholder:text-white/20 text-sm sm:text-base" placeholder="Your name" />
                                 </div>
                                 <div className="space-y-2">
-                                    <label htmlFor="company" className="text-sm font-semibold text-white/60 uppercase tracking-widest">Business</label>
-                                    <input required type="text" id="company" name="company" className="w-full h-14 rounded-2xl bg-white/[0.03] border border-white/[0.05] px-5 text-white focus:outline-none focus:bg-white/[0.06] focus:border-white/20 transition-all duration-300 placeholder:text-white/20" placeholder="Your business" />
+                                    <label htmlFor="company" className="text-xs sm:text-sm font-semibold text-white/60 uppercase tracking-widest">Business</label>
+                                    <input required type="text" id="company" name="company" className="w-full h-12 sm:h-14 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.05] px-4 sm:px-5 text-white focus:outline-none focus:bg-white/[0.06] focus:border-white/20 transition-all duration-300 placeholder:text-white/20 text-sm sm:text-base" placeholder="Your business" />
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="email" className="text-sm font-semibold text-white/60 uppercase tracking-widest">Email</label>
-                                <input required type="email" id="email" name="email" className="w-full h-14 rounded-2xl bg-white/[0.03] border border-white/[0.05] px-5 text-white focus:outline-none focus:bg-white/[0.06] focus:border-white/20 transition-all duration-300 placeholder:text-white/20" placeholder="your@email.com" />
+                                <label htmlFor="email" className="text-xs sm:text-sm font-semibold text-white/60 uppercase tracking-widest">Email</label>
+                                <input required type="email" id="email" name="email" className="w-full h-12 sm:h-14 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.05] px-4 sm:px-5 text-white focus:outline-none focus:bg-white/[0.06] focus:border-white/20 transition-all duration-300 placeholder:text-white/20 text-sm sm:text-base" placeholder="your@email.com" />
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="message" className="text-sm font-semibold text-white/60 uppercase tracking-widest">Project Details</label>
-                                <textarea required id="message" name="message" rows={4} className="w-full rounded-2xl bg-white/[0.03] border border-white/[0.05] p-5 text-white focus:outline-none focus:bg-white/[0.06] focus:border-white/20 transition-all duration-300 placeholder:text-white/20 resize-none" placeholder="I need an app for my business..."></textarea>
+                                <label htmlFor="message" className="text-xs sm:text-sm font-semibold text-white/60 uppercase tracking-widest">Project Details</label>
+                                <textarea required id="message" name="message" rows={4} className="w-full rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.05] p-4 sm:p-5 text-white focus:outline-none focus:bg-white/[0.06] focus:border-white/20 transition-all duration-300 placeholder:text-white/20 resize-none text-sm sm:text-base" placeholder="I need an app for my business..."></textarea>
                             </div>
 
                             <Button disabled={isLoading} size="lg" className="w-full text-base font-semibold h-14 rounded-2xl bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all duration-300 border-0">

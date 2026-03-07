@@ -63,7 +63,9 @@ export const Global3DBackground = () => {
                 alpha: true
             });
             refs.renderer.setSize(window.innerWidth, window.innerHeight);
-            refs.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            // Cap pixel ratio at 1.5 for performance, or 1 for very small mobile screens
+            const pixelRatio = window.innerWidth < 768 ? 1 : Math.min(window.devicePixelRatio, 1.5);
+            refs.renderer.setPixelRatio(pixelRatio);
             refs.renderer.toneMapping = THREE.ACESFilmicToneMapping;
             refs.renderer.toneMappingExposure = 0.5;
 
